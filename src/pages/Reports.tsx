@@ -156,7 +156,7 @@ const Reports = () => {
 
   return (
     <Layout>
-      <div className="space-y-6 pb-20">
+      <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold">Отчеты</h1>
           <Button onClick={exportToCSV} variant="outline" size="sm">
