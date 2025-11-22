@@ -42,7 +42,7 @@ export const TransactionList = ({ transactions }: TransactionListProps) => {
                 )}
               >
                 {transaction.type === 'income' ? '+' : '-'}
-                {Number(transaction.amount).toLocaleString('ru-RU')}
+                {Number(transaction.amount).toLocaleString('ru-RU')} р.
               </p>
               {transaction.category?.group && (
                 <p className="text-xs text-muted-foreground">
