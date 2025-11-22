@@ -52,7 +52,7 @@ const Transactions = () => {
 
   return (
     <Layout>
-      <div className="space-y-6 pb-20">
+      <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold">Операции</h1>
           <div className="flex gap-2">
