@@ -1,0 +1,22 @@
+# DreamBox - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /login
+Disallow: /register
+
+# Sitemap
+Sitemap: https://my-dreambox.ru/sitemap.xml
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
