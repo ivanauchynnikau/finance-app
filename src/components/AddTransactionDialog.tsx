@@ -97,12 +97,12 @@ export const AddTransactionDialog = ({ open, onOpenChange, defaultType = 'expens
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md">
-        <DialogHeader>
+      <DialogContent className="max-w-md max-h-[95vh] flex flex-col p-0">
+        <DialogHeader className="px-6 pt-6 pb-2 shrink-0">
           <DialogTitle>Новая операция</DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-4 pt-4">
+        <div className="space-y-4 px-6 pb-6 overflow-y-auto flex-1">
           {/* Переключатель доход/расход */}
           <Tabs value={type} onValueChange={(v) => {
             setType(v as 'income' | 'expense');
