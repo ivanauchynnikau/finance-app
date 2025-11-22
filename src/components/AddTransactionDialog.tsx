@@ -154,43 +154,49 @@ export const AddTransactionDialog = ({ open, onOpenChange, defaultType = 'expens
             </Popover>
           </div>
 
-          {/* Поиск категории */}
+          {/* Категория */}
           <div className="space-y-2">
-            <Label htmlFor="category-search">Категория</Label>
+            <Label>Выберите категорию</Label>
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground z-10" />
               <Input
-                id="category-search"
                 placeholder="Поиск категории..."
                 value={categorySearch}
                 onChange={(e) => setCategorySearch(e.target.value)}
-                className="pl-9"
+                className="pl-9 mb-2"
               />
             </div>
-          </div>
 
-          {/* Список категорий */}
-          <div className="max-h-48 overflow-y-auto space-y-1 border rounded-lg p-2">
-            {filteredCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setCategoryId(category.id)}
-                className={cn(
-                  'w-full flex items-center gap-3 p-3 rounded-lg transition-colors text-left',
-                  categoryId === category.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:bg-accent'
-                )}
-              >
-                <span className="text-xl">{category.icon}</span>
-                <div className="flex-1">
-                  <p className="font-medium">{category.name}</p>
-                  {category.group && (
-                    <p className="text-xs opacity-80">{category.group.name}</p>
-                  )}
+            {/* Список категорий */}
+            <div className="max-h-64 overflow-y-auto space-y-1 border rounded-lg p-2">
+              {filteredCategories.length > 0 ? (
+                filteredCategories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setCategoryId(category.id)}
+                    className={cn(
+                      'w-full flex items-center gap-3 p-3 rounded-lg transition-colors text-left',
+                      categoryId === category.id
+                        ? 'bg-primary text-primary-foreground'
+                        : 'hover:bg-accent'
+                    )}
+                  >
+                    <span className="text-xl">{category.icon}</span>
+                    <div className="flex-1">
+                      <p className="font-medium">{category.name}</p>
+                      {category.group && (
+                        <p className="text-xs opacity-80">{category.group.name}</p>
+                      )}
+                    </div>
+                  </button>
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p className="mb-2">Категории не найдены</p>
+                  <p className="text-sm">Создайте категории в разделе "Категории"</p>
                 </div>
-              </button>
-            ))}
+              )}
+            </div>
           </div>
 
           {/* Примечание */}
