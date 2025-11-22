@@ -46,11 +46,31 @@ const Dashboard = () => {
     enabled: !!user,
   });
 
+  // Пастельные цвета для диаграммы
+  const PASTEL_COLORS = [
+    '#a7f3d0', // Мятный
+    '#fde68a', // Желтый
+    '#fecaca', // Розовый
+    '#c4b5fd', // Фиолетовый
+    '#bfdbfe', // Голубой
+    '#fbcfe8', // Лиловый
+    '#99f6e4', // Бирюзовый
+    '#fed7aa', // Персиковый
+    '#d9f99d', // Лаймовый
+    '#ddd6fe', // Лавандовый
+  ];
+
   // Подготовка данных для диаграммы
   const chartData = categoryStats
     ? viewMode === 'groups'
-      ? prepareGroupData(categoryStats)
-      : prepareCategoryData(categoryStats)
+      ? prepareGroupData(categoryStats).map((item, idx) => ({
+          ...item,
+          color: PASTEL_COLORS[idx % PASTEL_COLORS.length]
+        }))
+      : prepareCategoryData(categoryStats).map((item, idx) => ({
+          ...item,
+          color: PASTEL_COLORS[idx % PASTEL_COLORS.length]
+        }))
     : [];
 
   const totalExpense = statistics?.expense || 0;
@@ -100,9 +120,11 @@ const Dashboard = () => {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
+                  innerRadius={50}
                   outerRadius={80}
                   fill="#8884d8"
                   dataKey="value"
+                  isAnimationActive={false}
                 >
                   {chartData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
