@@ -2,7 +2,8 @@
 
 Мобильное веб-приложение для учета личных финансов с системой группировки категорий и минималистичным дизайном.
 
-🔗 **Live Demo:** https://ivanauchynnikau.github.io/finance-app/
+🔗 **Live Demo:** https://ivanauchynnikau.github.io/finance-app/  
+🗄️ **Backend:** Supabase (PostgreSQL + Auth + Storage)
 
 ## ✨ Возможности
 
