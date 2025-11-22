@@ -73,7 +73,7 @@ const Dashboard = () => {
                 setShowAddDialog(true);
               }} 
               size="icon" 
-              className="rounded-full h-12 w-12 bg-red-500 hover:bg-red-600"
+              className="rounded-full h-12 w-12 bg-red-400 hover:bg-red-500 text-white"
             >
               <Minus className="h-6 w-6" />
             </Button>
@@ -83,7 +83,7 @@ const Dashboard = () => {
                 setShowAddDialog(true);
               }} 
               size="icon" 
-              className="rounded-full h-12 w-12 bg-green-500 hover:bg-green-600"
+              className="rounded-full h-12 w-12 bg-primary hover:bg-primary/90 text-white"
             >
               <Plus className="h-6 w-6" />
             </Button>
