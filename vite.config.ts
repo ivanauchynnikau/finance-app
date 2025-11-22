@@ -4,7 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/', // Используется кастомный домен my-dreambox.ru
+  // Для GitHub Pages используем имя репозитория, для кастомного домена - '/'
+  base: process.env.GITHUB_PAGES === 'true' ? '/finance-app/' : '/',
   server: {
     host: "::",
     port: 8080,

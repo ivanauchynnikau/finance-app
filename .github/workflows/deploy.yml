@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main, master ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -27,7 +28,7 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         
       - name: Build
         env:
@@ -50,4 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
