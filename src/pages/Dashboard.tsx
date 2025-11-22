@@ -142,20 +142,20 @@ const Dashboard = () => {
             <div className="flex justify-between items-center">
               <span className="text-muted-foreground">Доходы:</span>
               <span className="text-xl font-bold text-green-500">
-                ₽{statistics?.income.toLocaleString('ru-RU') || 0}
+                {statistics?.income.toLocaleString('ru-RU') || 0} р.
               </span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-muted-foreground">Расходы:</span>
               <span className="text-xl font-bold text-red-500">
-                ₽{statistics?.expense.toLocaleString('ru-RU') || 0}
+                {statistics?.expense.toLocaleString('ru-RU') || 0} р.
               </span>
             </div>
             <div className="h-px bg-border" />
             <div className="flex justify-between items-center">
               <span className="text-muted-foreground font-semibold">Остаток:</span>
               <span className="text-2xl font-bold">
-                ₽{statistics?.balance.toLocaleString('ru-RU') || 0}
+                {statistics?.balance.toLocaleString('ru-RU') || 0} р.
               </span>
             </div>
           </div>
@@ -187,7 +187,7 @@ const Dashboard = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-muted-foreground">{percentage}%</span>
-                    <span className="font-semibold">₽{item.value.toLocaleString('ru-RU')}</span>
+                    <span className="font-semibold">{item.value.toLocaleString('ru-RU')} р.</span>
                   </div>
                 </div>
               );

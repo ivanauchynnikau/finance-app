@@ -41,7 +41,7 @@ export const TransactionList = ({ transactions }: TransactionListProps) => {
                   transaction.type === 'income' ? 'text-green-500' : 'text-red-500'
                 )}
               >
-                {transaction.type === 'income' ? '+' : '-'}₽
+                {transaction.type === 'income' ? '+' : '-'}
                 {Number(transaction.amount).toLocaleString('ru-RU')}
               </p>
               {transaction.category?.group && (
